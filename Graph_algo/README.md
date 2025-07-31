@@ -51,7 +51,7 @@
 | 遍歷整張圖 (BFS / DFS)         | O(V²)         | O(V + E)     | O(V²)          | O(V + E)     |
 
 
-![本地圖示](./11.png)
+![本地圖示](../Readme_photo/Graph.png)
 
 ---
 
