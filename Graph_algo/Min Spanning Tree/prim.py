@@ -1,5 +1,5 @@
 import heapq
-from ../drawGraph import draw
+from drawGraph import draw
 def prim(graph, start):
     visited = set()
     key = {node: float('inf') for node in graph}
@@ -39,3 +39,4 @@ if __name__ == '__main__':
     print("Edges in MST:")
     for u, v, w in mst:
         print(f"{u} - {v} (weight {w})")
+    draw(graph,mst)
