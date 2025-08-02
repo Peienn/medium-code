@@ -27,6 +27,5 @@ def draw(graph, other_algorithm):
     nx.draw(prim_graph, pos, with_labels=True, node_color='lightblue', node_size=2000)
     prim_edge_labels = nx.get_edge_attributes(prim_graph, 'weight')
     nx.draw_networkx_edge_labels(prim_graph, pos, edge_labels=prim_edge_labels)
-    plt.title("Dijstrak Shortest Paht")
     plt.show()
 
