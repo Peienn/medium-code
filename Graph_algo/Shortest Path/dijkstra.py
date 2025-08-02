@@ -1,9 +1,12 @@
+import heapq
+from drawGraph import draw
 def dijkstra(graph, start):
-    distances = {node: float('inf') for node in graph}
+    distances = {node: float('inf') for node in graph} #找出每個節點最終需要的距離
     distances[start] = 0
-    priority_queue = [(0, start)]  # (距離, 節點)
-
-    while priority_queue:
+    priority_queue = [(0, start)] 
+   
+    previous={node: 0 for node in graph}  # 找出前一位是誰
+    while priority_queue: 
         current_distance, current_node = heapq.heappop(priority_queue)
 
         if current_distance > distances[current_node]:
@@ -13,11 +16,17 @@ def dijkstra(graph, start):
             distance = current_distance + weight
 
             if distance < distances[neighbor]:
+                previous[neighbor] = (current_node,distance)
                 distances[neighbor] = distance
                 heapq.heappush(priority_queue, (distance, neighbor))
     
-    return distances
-
+    
+    #將其轉換成List,畫圖用
+    shortest_path_edges = []
+    for i,value in previous.items():
+        if value:
+            shortest_path_edges.append( (i,value[0] , value[1]) )
+    return distances , shortest_path_edges
 
 if __name__ =='__main__':
 
@@ -30,6 +39,8 @@ if __name__ =='__main__':
   }
   # 使用 Dijkstra 演算法計算最短路徑
   start_node = 'A'
-  dijkstra_result = dijkstra(graph, start_node)
+  dijkstra_result,previous = dijkstra(graph, start_node)
   print("Dijkstra 最短路徑距離：", dijkstra_result)
-
+  
+  
+  draw(graph,previous)
