@@ -2,7 +2,8 @@
 # 執行完prim之後，得到prim_result
 # 再將原圖graph + 得到的prim_result 丟入function即可
 # --> draw(graph, prim_result)
-
+import networkx as nx
+import matplotlib.pyplot as plt
 def draw(graph, other_algorithm):
 
     G = nx.Graph()
