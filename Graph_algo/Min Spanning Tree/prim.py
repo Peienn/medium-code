@@ -1,4 +1,5 @@
 import heapq
+from ../drawGraph import draw
 def prim(graph, start):
     visited = set()
     key = {node: float('inf') for node in graph}
