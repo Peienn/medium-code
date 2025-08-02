@@ -52,3 +52,5 @@ if __name__ == '__main__':
         'E': {'C':10, 'D': 6}
     }
     mst,total_w = krustal(graph)
+    from drawGraph import draw
+    draw(graph,mst)
