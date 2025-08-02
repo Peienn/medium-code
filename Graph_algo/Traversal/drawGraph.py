@@ -16,7 +16,7 @@ def draw(graph, dfs_edges):
     nx.draw_networkx_edges(G, pos, edgelist=dfs_edges, edge_color='blue', width=2)
    
     
-    plt.title("DFS Traversal and Tree")
+    plt.title("Traversal and Tree")
     plt.axis('off')
     plt.tight_layout()
     plt.show()
