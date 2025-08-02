@@ -23,4 +23,4 @@ if __name__ == '__main__':
     DFS(graph, start)
 
     print("DFS Traversal:" , [start] + [edges[1] for edges in dfs_edges])        
-    draw()
+    draw(graph , dfs_edges)
